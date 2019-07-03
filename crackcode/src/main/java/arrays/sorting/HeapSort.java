@@ -1,5 +1,7 @@
 package arrays.sorting;
 
+import java.util.Arrays;
+
 public class HeapSort {
 
     public static void heapify(int[] array, int size, int currentNodeIndex) {
@@ -43,5 +45,9 @@ public class HeapSort {
             heapify(array, i, 0);
         }
         return array;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(Arrays.toString(heapSort(new int[]{7,1,3,2,4,5,6})));
     }
 }

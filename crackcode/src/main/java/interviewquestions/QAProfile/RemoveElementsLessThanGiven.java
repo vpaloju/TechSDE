@@ -1,10 +1,10 @@
-package arrays.sorting;
+package interviewquestions.QAProfile;
 
-import java.util.Arrays;
+public class RemoveElementsLessThanGiven {
 
-public class InsertionSort {
+    int result[];
 
-    public static int[] insertionSort(int[] array) {
+    public static int[] removeLesserElements(int[] array, int key){
         int n = array.length - 1;
         for (int i = 1; i <= n; i++) {
             int j, valueToBeSort = array[i];
@@ -14,9 +14,5 @@ public class InsertionSort {
             array[j] = valueToBeSort;
         }
         return array;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(Arrays.toString(insertionSort(new int[]{1,5,6,2,3,4})));
     }
 }

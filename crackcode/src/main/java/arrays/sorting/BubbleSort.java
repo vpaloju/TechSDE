@@ -1,5 +1,7 @@
 package arrays.sorting;
 
+import java.util.Arrays;
+
 public class BubbleSort {
 
     public static int[] bubbleSort(int[] array) {
@@ -18,5 +20,9 @@ public class BubbleSort {
                 break;
         }
         return array;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(Arrays.toString(bubbleSort(new int[]{1,2,3,5,7,6,4})));
     }
 }

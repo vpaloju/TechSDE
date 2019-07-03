@@ -14,17 +14,17 @@ public class ArrangePossitiveNegative {
      */
     public static int[] arrangePossitiveNegative(int[] array) {
         int size = array.length;
-        int count = -1, temp = 0;
+        int negativeNumberIndex = -1, temp = 0;
         for (int j = 0; j < size; j++) {
             if (array[j] < 0) {
-                count++;
-                temp = array[count];
-                array[count] = array[j];
+                negativeNumberIndex++;
+                temp = array[negativeNumberIndex];
+                array[negativeNumberIndex] = array[j];
                 array[j] = temp;
 
             }
         }
-        int possitive = count + 1, negative = 0;
+        int possitive = negativeNumberIndex + 1, negative = 0;
 
         while (possitive < size && negative < possitive && array[negative] < 0) {
             temp = array[negative];

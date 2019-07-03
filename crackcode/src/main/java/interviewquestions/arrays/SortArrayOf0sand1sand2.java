@@ -1,6 +1,8 @@
 package interviewquestions.arrays;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Dutch national flag problem.
@@ -38,6 +40,8 @@ public class SortArrayOf0sand1sand2 {
     }
 
     public static void main(String[] args) {
+        Map map = new HashMap<Integer,String>();
+        map.put(1,"a");
         int[] array=new int[]{0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1};
         System.out.println(Arrays.toString(sortArrayOf0sand1sand2(array,array.length)));
     }
