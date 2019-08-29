@@ -1,5 +1,8 @@
 package interviewquestions.QAProfile;
 
+/**
+ * You have an array of n integers, find the number (if exist ) which is occurring more than n/2 no. of times in O(1) space and O(n) time complexity
+ */
 
 import java.util.HashMap;
 import java.util.Map;

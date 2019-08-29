@@ -1,18 +1,22 @@
 package interviewquestions.QAProfile;
 
+import java.util.Arrays;
+
 public class RemoveElementsLessThanGiven {
 
     int result[];
 
     public static int[] removeLesserElements(int[] array, int key){
-        int n = array.length - 1;
-        for (int i = 1; i <= n; i++) {
-            int j, valueToBeSort = array[i];
-            for (j = i; j > 0 && array[j - 1] > valueToBeSort; j--) {
-                array[j] = array[j - 1];
+        int j=0;
+        for(int i=0;i<array.length;i++){
+            if(array[i]<key){
+                array[i]=array[i+1];
             }
-            array[j] = valueToBeSort;
         }
         return array;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(Arrays.toString(removeLesserElements(new int[]{1,2,3,4,5,10,7,9,8,6},5)));
     }
 }

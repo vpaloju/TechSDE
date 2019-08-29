@@ -10,11 +10,11 @@ public class InsertNode {
     LinkedListNode head;
 
     public void push(int dataToInsert) {
-        //Allocate the Node & Put in the data
+        //Allocate the TreeNode & Put in the data
         LinkedListNode nodeToInsert = new LinkedListNode(dataToInsert);
-        //Make next of new Node as head
+        //Make next of new TreeNode as head
         nodeToInsert.next = head;
-        //Move the head to point to new Node
+        //Move the head to point to new TreeNode
         head = nodeToInsert;
     }
 
@@ -23,16 +23,16 @@ public class InsertNode {
             System.out.println("The given previous node cannot be null");
             return;
         }
-        //Allocate the Node & Put in the data
+        //Allocate the TreeNode & Put in the data
         LinkedListNode nodeToInsert = new LinkedListNode(dataToInsert);
-        //Make next of new Node as next of prev_node
+        //Make next of new TreeNode as next of prev_node
         nodeToInsert.next=prev_node.next;
         //make next of prev_node as new_node
         prev_node.next=nodeToInsert;
     }
 
     public void append(int dataToInsert ){
-        //Allocate the Node & Put in the data
+        //Allocate the TreeNode & Put in the data
         LinkedListNode nodeToInsert = new LinkedListNode(dataToInsert);
         //If the Linked List is empty, then make the new node as head
         if(head==null){

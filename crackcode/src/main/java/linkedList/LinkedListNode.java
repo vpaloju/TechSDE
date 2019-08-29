@@ -34,7 +34,7 @@ public class LinkedListNode {
 
         linkedList.head.next = second; // Link first node with the second node
 
-        /*  Now next of first Node refers to second.  So they
+        /*  Now next of first TreeNode refers to second.  So they
             both are linked.
 
          llist.head        second              third
@@ -46,7 +46,7 @@ public class LinkedListNode {
 
         second.next = third; // Link second node with the third node
 
-        /*  Now next of second Node refers to third.  So all three
+        /*  Now next of second TreeNode refers to third.  So all three
             nodes are linked.
 
          llist.head        second              third
