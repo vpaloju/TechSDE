@@ -14,8 +14,6 @@ public class DetectLoop {
             if (slowPointer == fastPointer) {
                 System.out.println("Found loop");
                 return true;
-            } else {
-                return false;
             }
         }
         return false;

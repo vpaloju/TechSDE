@@ -12,16 +12,29 @@ public class LinearSearch {
         return -1;
     }
 
-    public static int linearSearch(int[] array, int l,int r,int x){
-        if(r<l){
+    public static int linearSearch(int[] array, int left,int right,int x){
+        if(right<left){
             return -1;
         }
-        if(x==array[l]){
-            return l;
+        if(left==right){
+            if(x==array[left]){
+                return left;
+            }else{
+                return -1;
+            }
         }
-        if(x==array[r]){
-            return r;
+        if(x==array[left]){
+            return left;
         }
-        return linearSearch(array,l+1,r-1,x);
+        if(x==array[right]){
+            return right;
+        }
+        return linearSearch(array,left+1,right-1,x);
+    }
+
+    public static void main(String[] args) {
+        int[] a = new int[]{1,2,3,4,5,6,7,8,9,10};
+        System.out.println(linearSearch(a,5));
+        System.out.println(linearSearch(a,0,a.length-1,5));
     }
 }

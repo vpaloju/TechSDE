@@ -1,6 +1,9 @@
 package arrays.sorting;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class BubbleSort {
 
@@ -23,6 +26,6 @@ public class BubbleSort {
     }
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(bubbleSort(new int[]{1,2,3,5,7,6,4})));
+        System.out.println(Arrays.toString(bubbleSort(new int[]{1, 2, 3, 5, 7, 6, 4})));
     }
 }

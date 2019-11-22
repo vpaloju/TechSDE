@@ -36,4 +36,9 @@ public class PermutationsOfString {
 
     }
 
+    public static void main(String[] args) {
+        permute("abc",0,2);
+        permutations("abc","");
+    }
+
 }

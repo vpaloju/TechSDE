@@ -1,5 +1,7 @@
 package arrays.arrangementOfArrays;
 
+import java.util.Arrays;
+
 public class MoveAllZerosToRight {
 
     public static int[] moveAllZerosToRight(int[] array) {
@@ -13,5 +15,9 @@ public class MoveAllZerosToRight {
             array[nonZeroNumberIndex++] = 0;
         }
         return array;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(Arrays.toString(moveAllZerosToRight(new int[]{0,1,2,3,0,4,0,5,6,0})));
     }
 }

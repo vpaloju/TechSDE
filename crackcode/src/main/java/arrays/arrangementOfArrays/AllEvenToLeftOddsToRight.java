@@ -44,5 +44,6 @@ public class AllEvenToLeftOddsToRight {
 
     public static void main(String[] args) {
         moveAllEvenToLeftOddsToRight(new int[]{3,1,2,5,6,8,0});
+        System.out.println("array = " + Arrays.toString(moveAllEvensToLeft(new int[]{3,1,2,5,6,8,0})));
     }
 }

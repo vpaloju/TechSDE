@@ -18,4 +18,8 @@ public class FactorialOfNumber {
         }
         return result;
     }
+
+    public static void main(String[] args) {
+        System.out.println(factorialOfNumber(10,4));
+    }
 }

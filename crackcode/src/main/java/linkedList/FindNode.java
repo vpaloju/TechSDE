@@ -83,7 +83,6 @@ public class FindNode {
     }
 
     public int getMiddleNode(LinkedListNode head) {
-        LinkedListNode current = head;
         LinkedListNode slower = head;
         LinkedListNode faster = head;
         if (head!=null){

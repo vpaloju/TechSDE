@@ -7,16 +7,16 @@ import java.util.Arrays;
  */
 public class Anagram {
 
-    public static boolean anagram(String str1,String str2){
-        if(str1.length()!=str2.length()){
+    public static boolean anagram(String str1, String str2) {
+        if (str1.length() != str2.length()) {
             return false;
         }
-        char[] str1CharArray=str1.toCharArray();
-        char[] str2CharArray=str2.toCharArray();
+        char[] str1CharArray = str1.toCharArray();
+        char[] str2CharArray = str2.toCharArray();
         Arrays.sort(str1CharArray);
         Arrays.sort(str2CharArray);
-        for(int i=0;i<str1CharArray.length;i++){
-            if(str1CharArray[i]!=str2CharArray[i]){
+        for (int i = 0; i < str1CharArray.length; i++) {
+            if (str1CharArray[i] != str2CharArray[i]) {
                 return false;
             }
         }
@@ -50,7 +50,25 @@ public class Anagram {
         return true;
     }
 
+    public static boolean isAnagram(String str1, String str2) {
+        if (str1.length() == 0 || str2.length() == 0 || str1.length() != str2.length()) {
+            return false;
+        }
+        byte[] map = new byte[256];
+        for (char c : str1.toCharArray()) {
+            map[c]++;
+        }
+        for (char c : str2.toCharArray()) {
+            map[c]--;
+            if (map[c] < 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
-        System.out.println(anagram("TRIANGLE","INTEGRAL"));
+        System.out.println(anagram("TRIANGLE", "INTEGRAL"));
+        System.out.println(isAnagram("ATRIANGLE", "XINTEGRAL"));
     }
 }

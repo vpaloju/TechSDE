@@ -1,5 +1,7 @@
 package arrays.arrayRotations;
 
+import java.util.Arrays;
+
 public class ArrayRotation {
 
     /**
@@ -94,11 +96,10 @@ public class ArrayRotation {
      * @return
      */
     public static int[] rotateArray(int[] array, int size, int elementsToBeRotate) {
-        int[] results = new int[size];
         for (int i = 0; i < elementsToBeRotate; i++) {
-            results = swap(array, i, array.length - 1 - i);
+            swap(array, i, array.length - 1 - i);
         }
-        return results;
+        return array;
     }
 
     /**
@@ -114,5 +115,9 @@ public class ArrayRotation {
             array[endIndex] = temp;
         }
         return array;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(Arrays.toString(rotateUsingTempArray(new int[]{1,2,3,4},4,2)));
     }
 }

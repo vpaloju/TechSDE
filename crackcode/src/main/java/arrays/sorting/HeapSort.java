@@ -48,6 +48,6 @@ public class HeapSort {
     }
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(heapSort(new int[]{7,1,3,2,4,5,6})));
+        System.out.println(Arrays.toString(heapSort(new int[]{7,1,3,2,4,5,6,-10,-20,-1,-40})));
     }
 }

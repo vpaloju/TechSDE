@@ -10,4 +10,12 @@ public class LCMOfNumbers {
         }
         return lcm;
     }
+
+    public static int lcm(int a, int b) {
+        return (a * b) / GCDOfNumbers.gcd(a, b);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(lcm(4, 16));
+    }
 }
