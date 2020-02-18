@@ -1,5 +1,8 @@
 package arrays;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class DuplicatesInArray {
     public static void printRepeating(int arr[], int size) {
         int i;
@@ -13,7 +16,25 @@ public class DuplicatesInArray {
         }
     }
 
+    public static void duplicatesInArray(int[] a) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < a.length; i++) {
+            if (!map.containsKey(a[i])) {
+                map.put(a[i], 1);
+            } else {
+                map.put(a[i], map.get(a[i]) + 1);
+            }
+        }
+        System.out.println("Duplicate Elements are: ");
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            if (entry.getValue() > 1) {
+                System.out.print(entry.getKey() + " ");
+            }
+        }
+    }
+
     public static void main(String[] args) {
-        printRepeating(new int[]{1,2,3,4,5,6,7,8,9,10,1,2,3,4,5},15);
+        printRepeating(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5}, 15);
+        duplicatesInArray(new int[]{500, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 300});
     }
 }
