@@ -12,7 +12,7 @@ public class DecimalToBinary {
     }
 
     public static void main(String[] args) {
-        System.out.println(decimalToBinary(10));
+        System.out.println(decimalToBinary(5));
         System.out.println(decimalToBinary(9));
     }
 }

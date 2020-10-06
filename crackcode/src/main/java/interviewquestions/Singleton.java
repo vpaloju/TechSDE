@@ -17,13 +17,11 @@ public class Singleton {
     }
 
     //Using inner class.
-    private static class BillPughSingleton
-    {
+    private static class BillPughSingleton {
         private static final Singleton INSTANCE = new Singleton();
     }
 
-    public static Singleton getInstanceBillPugh()
-    {
+    public static Singleton getInstanceBillPugh() {
         return BillPughSingleton.INSTANCE;
     }
 }
