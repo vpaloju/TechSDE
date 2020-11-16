@@ -74,7 +74,7 @@ public class BinarySearch {
 
     public static void main(String[] args) {
         int[] a = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-        System.out.println(binarySearch(a, 5));
+        System.out.println(binarySearch(a, 10));
         System.out.println(binarySearch(a, 0, a.length - 1, 100));
     }
 }

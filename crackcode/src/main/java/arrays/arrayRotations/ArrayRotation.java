@@ -36,7 +36,7 @@ public class ArrayRotation {
      * @param elementsToBeRotate
      * @return
      */
-    public int[] rotateOneByOne(int[] array, int size, int elementsToBeRotate) {
+    public static int[] rotateOneByOne(int[] array, int size, int elementsToBeRotate) {
         int[] resultArray = new int[size];
         for (int i = 0; i < elementsToBeRotate; i++) {
             resultArray = lefRotateArraybyOne(array, size);
@@ -49,7 +49,7 @@ public class ArrayRotation {
      * @param size
      * @return
      */
-    public int[] lefRotateArraybyOne(int[] array, int size) {
+    public static int[] lefRotateArraybyOne(int[] array, int size) {
         int temp = array[0];
         for (int i = 0; i < size - 1; i++) {
             array[i] = array[i + 1];
@@ -118,6 +118,6 @@ public class ArrayRotation {
     }
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(rotateUsingTempArray(new int[]{1,2,3,4},4,2)));
+        System.out.println(Arrays.toString(rotateOneByOne(new int[]{1,2,3,4},4,2)));
     }
 }

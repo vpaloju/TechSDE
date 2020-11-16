@@ -1,5 +1,7 @@
 package arrays.arrangementOfArrays;
 
+import java.util.Arrays;
+
 public class ArrangeAllNegativeLeft {
 
     public static int[] arrangeAllNegativeLeft(int array[]) {
@@ -33,5 +35,9 @@ public class ArrangeAllNegativeLeft {
         return array;
     }
 
+    public static void main(String[] args) {
+        int[] a = {1, -1, 3, 2, -7, -5, 11, 6 };
+        System.out.println(Arrays.toString(arrangeAllPossitivesRight(a)));
+    }
 
 }
