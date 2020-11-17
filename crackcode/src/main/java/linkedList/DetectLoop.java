@@ -10,7 +10,7 @@ public class DetectLoop {
         LinkedListNode fastPointer = head;
         while (slowPointer != null && fastPointer != null && fastPointer.next != null) {
             slowPointer = slowPointer.next;
-            fastPointer = fastPointer.next;
+            fastPointer = fastPointer.next.next;
             if (slowPointer == fastPointer) {
                 System.out.println("Found loop");
                 return true;
