@@ -4,7 +4,7 @@ public class SecondMaxOccuranceCharacter {
   public static char secondMaxOccuranceChar(String str) {
     int ASCII_SIZE = 256;
     int[] map = new int[ASCII_SIZE];
-    char[] charArray = str.toLowerCase().toCharArray();
+    char[] charArray = str.toCharArray();
     int max = 0, secondMax = 0;
     char maxChar = '\n', secondMaxChar = '\n';
     for (int i = 0; i < charArray.length; i++) {

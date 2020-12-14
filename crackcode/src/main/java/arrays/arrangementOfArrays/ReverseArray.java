@@ -1,5 +1,7 @@
 package arrays.arrangementOfArrays;
 
+import java.util.Arrays;
+
 /**
  * Write a program to reverse an array or string
  * Last Updated: 08-09-2020
@@ -28,7 +30,7 @@ public class ReverseArray {
     if (startIndex >= endIndex) {
       return array;
     }
-    while (startIndex < endIndex) {
+    for (startIndex = 0, endIndex = array.length - 1; startIndex < endIndex; startIndex++, endIndex--) {
       int temp = array[startIndex];
       array[startIndex] = array[endIndex];
       array[endIndex] = temp;
@@ -52,5 +54,10 @@ public class ReverseArray {
     array[endIndex] = temp;
     reverseRecursive(array, startIndex + 1, endIndex - 1);
     return array;
+  }
+
+  public static void main(String[] args) {
+    System.out.println(Arrays.toString(reverseArray(new int[]{1, 2, 3, 4, 5, 6})));
+    System.out.println(Arrays.toString(reverseRecursive(new int[]{1, 2, 3, 4, 5, 6}, 0, 5)));
   }
 }

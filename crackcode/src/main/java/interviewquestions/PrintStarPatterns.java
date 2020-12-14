@@ -62,6 +62,88 @@ public class PrintStarPatterns {
     }
   }
 
+  public static void printpyramidPattern(int n) {
+    for (int i = 0; i < n; i++) //outer loop for number of rows(n)
+    {
+      for (int j = n - i; j > 1; j--) //inner loop for spaces
+      {
+        System.out.print(" "); //print space
+      }
+      for (int j = 0; j <= i; j++) //inner loop for number of columns
+      {
+        System.out.print("* "); //print star
+      }
+
+      System.out.println(); //ending line after each row
+    }
+  }
+
+  public static void printStars(int n) {
+    int i, j;
+    for (i = 0; i < n; i++) //outer loop for number of rows(n)
+    {
+      for (j = 2 * (n - i); j >= 0; j--) // inner loop for spaces
+      {
+        System.out.print(" "); // printing space
+      }
+      for (j = 0; j <= i; j++) //  inner loop for columns
+      {
+        System.out.print("* "); // print star
+      }
+      System.out.println(); // ending line after each row
+    }
+  }
+
+  public static void rightTriangle(int n) {
+    int i, j;
+    for (i = 0; i < n; i++) //outer loop for number of rows(n)
+    {
+      for (j = 2 * (n - i); j >= 0; j--) // inner loop for spaces
+      {
+        System.out.print(" "); // printing space
+      }
+      for (j = 0; j <= i; j++) //  inner loop for columns
+      {
+        System.out.print("* "); // print star
+      }
+      System.out.println(); // ending line after each row
+    }
+  }
+
+  /**
+   *
+   * *
+   * * *
+   * * * *
+   * * * * *
+   * @param rows
+   */
+  public static void printRightTriangle(int rows) {
+    int i, j;
+    for (i = 0; i < rows; i++) {
+      for (j = 0; j <= i; j++) {
+        System.out.print("* ");
+      }
+      System.out.println();
+    }
+  }
+
+  /**
+   * @param rows
+   */
+  public static void printLeftTriangle(int rows) {
+    int i, j;
+    for (i = 0; i < rows; i++) {
+      for (j = 2 * (rows - i); j >= 0; j--) {
+        System.out.print(" ");
+      }
+      for (j = 0; j <= i; j++) {
+        System.out.print("* ");
+      }
+      System.out.println();
+    }
+  }
+
   public static void main(String[] args) {
     int n = 5;
     printHalfPyramid(n);
@@ -72,5 +154,9 @@ public class PrintStarPatterns {
     printInvertedHalfPyramid(n);
     printStairCase(n);
     pyramidPattern(n);
+    /*printpyramidPattern(n);
+    printStars(5);
+    printRightTriangle(5);
+    printLeftTriangle(5);*/
   }
 }
