@@ -22,5 +22,6 @@ public class MaxOccuranceCharacter {
 
     public static void main(String[] args) {
         System.out.println("Max occurring character is " + maxOccuranceChar("sample string"));
+        System.out.println("Max occurring character is " + maxOccuranceChar("welcome to oracle"));
     }
 }

@@ -29,11 +29,10 @@ public class ArrangePossitiveNegative {
         temp = array[negativeNumberIndex];
         array[negativeNumberIndex] = array[j];
         array[j] = temp;
-
       }
     }
-    int possitive = negativeNumberIndex + 1, negative = 0;
 
+    int possitive = negativeNumberIndex + 1, negative = 0;
     while (possitive < size && negative < possitive && array[negative] < 0) {
       temp = array[negative];
       array[negative] = array[possitive];
@@ -42,7 +41,6 @@ public class ArrangePossitiveNegative {
       negative += 2;
     }
     return array;
-
   }
 
   public static void main(String args[]) {

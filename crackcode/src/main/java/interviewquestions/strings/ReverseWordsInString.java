@@ -10,4 +10,8 @@ public class ReverseWordsInString {
         }
         return reversedWordsString;
     }
+
+    public static void main(String[] args) {
+        System.out.println(reverseWordsInString("Hello World welcome to java"));
+    }
 }

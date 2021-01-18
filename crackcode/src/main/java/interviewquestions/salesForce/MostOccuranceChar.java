@@ -1,5 +1,8 @@
 package interviewquestions.salesForce;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 public class MostOccuranceChar {
 
     public static char mostOccuranceChar(String str){

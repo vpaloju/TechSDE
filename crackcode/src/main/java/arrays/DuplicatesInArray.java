@@ -34,7 +34,7 @@ public class DuplicatesInArray {
     }
 
     public static void main(String[] args) {
-        printRepeating(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5}, 15);
+        printRepeating(new int[]{1,1,2}, 3);
         duplicatesInArray(new int[]{500, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 300});
     }
 }

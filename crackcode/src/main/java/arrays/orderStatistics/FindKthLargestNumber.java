@@ -72,7 +72,8 @@ public class FindKthLargestNumber {
 
   public static void main(String[] args) {
     int[] a = {12, 3, 5, 7, 19};
-    System.out.println(kthLargest(a, 2));
-    System.out.println(kthSmallest(a, 2));
+    /*System.out.println(kthLargest(a, 2));
+    System.out.println(kthSmallest(a, 2));*/
+    System.out.println(findKThLargest(a, 0, a.length - 1, 2));
   }
 }

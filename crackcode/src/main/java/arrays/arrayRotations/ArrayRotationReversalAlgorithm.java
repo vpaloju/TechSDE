@@ -20,12 +20,10 @@ public class ArrayRotationReversalAlgorithm {
    * @param endIndex
    */
   public static void reverse(int[] array, int startIndex, int endIndex) {
-    while (startIndex < endIndex) {
-      int temp = array[startIndex];
-      array[startIndex] = array[endIndex];
-      array[endIndex] = temp;
-      startIndex++;
-      endIndex--;
+    for (int i = startIndex, j = endIndex; i < j; i++, j--) {
+      int temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
     }
   }
 

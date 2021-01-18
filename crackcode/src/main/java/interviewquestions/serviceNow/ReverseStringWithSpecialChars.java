@@ -9,14 +9,11 @@ public class ReverseStringWithSpecialChars {
 
   public static String reverseString(String str) {
     char[] charArray = str.toCharArray();
-    int start = 0, end = str.length() - 1;
-    while (start < end) {
+    for (int start = 0, end = str.length() - 1; start < end; start++, end--) {
       if (!(((charArray[start] == '$') || (charArray[start] == '@')) && ((charArray[end] == '$') || (charArray[end] == '@')))) {
         charArray[start] ^= charArray[end];
         charArray[end] ^= charArray[start];
         charArray[start] ^= charArray[end];
-        start++;
-        end--;
       }
       if (((charArray[start] == '$') || (charArray[start] == '@'))) {
         start++;
