@@ -6,7 +6,7 @@ public class PermutationsOfString {
     if (start == end) {
       System.out.println(str);
     } else {
-      for (int i = start; i <= end; i++) {
+      for (int i = start; i < end; i++) {
         str = swap(str, start, i);
         permute(str, start + 1, end);
         str = swap(str, start, i);
@@ -35,7 +35,8 @@ public class PermutationsOfString {
   }
 
   public static void main(String[] args) {
-    permute("abc", 0, 2);
+    permute("abc", 0, 3);
+    System.out.println("*****************");
     permutations("abc", "");
   }
 }

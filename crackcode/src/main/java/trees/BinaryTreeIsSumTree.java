@@ -19,14 +19,11 @@ public class BinaryTreeIsSumTree {
 
   public boolean isSumTree(TreeNode node) {
     int leftSum, rightSum;
-
-    //If node is NULL or it's a leaf node then return true
-    if (node == null) {
+    if (node == null || isLeaf(node)) {
       return true;
     }
-
     if (isSumTree(node.left) && isSumTree(node.right)) {
-      //Get the sum of nodes in left sub tree.
+      // Get the sum of nodes in left subtree
       if (node.left == null) {
         leftSum = 0;
       } else if (isLeaf(node.left)) {
@@ -34,8 +31,6 @@ public class BinaryTreeIsSumTree {
       } else {
         leftSum = 2 * (node.left.data);
       }
-
-      //Get the sum of nodes in right sub tree.
       if (node.right == null) {
         rightSum = 0;
       } else if (isLeaf(node.right)) {
@@ -43,9 +38,7 @@ public class BinaryTreeIsSumTree {
       } else {
         rightSum = 2 * (node.right.data);
       }
-
-      //If root's data is equal to sum of nodes in left and right subtrees then return true else return false
-      if (node.data == leftSum + rightSum) {
+      if ((node.data == rightSum + leftSum)) {
         return true;
       } else {
         return false;
@@ -60,18 +53,17 @@ public class BinaryTreeIsSumTree {
   }
 
   public int sumOfLeftAndRightSubTrees(TreeNode node) {
-    if (node == null)
+    if (node == null) {
       return 0;
-    else if (isLeaf(node)) {
+    } else if (isLeaf(node)) {
       return node.data;
     }
-
-    int leftTreeSum = sumOfLeftAndRightSubTrees(node.left);
-    int rightTreeSum = sumOfLeftAndRightSubTrees(node.right);
-    if (leftTreeSum == -1 || rightTreeSum == -1) {
+    int leftSum = sumOfLeftAndRightSubTrees(node.left);
+    int rightSum = sumOfLeftAndRightSubTrees(node.right);
+    if (leftSum == -1 || rightSum == -1) {
       return -1;
     }
-    if ((leftTreeSum + rightTreeSum) == node.data) {
+    if (leftSum + rightSum == node.data) {
       return 2 * (node.data);
     } else {
       return -1;
@@ -97,6 +89,23 @@ public class BinaryTreeIsSumTree {
       System.out.println("The given tree is a sum tree");
     else
       System.out.println("The given tree is not a sum tree");
+    System.out.println("****************************");
+    BinaryTreeIsSumTree sumTree = new BinaryTreeIsSumTree();
+    sumTree.root = new TreeNode(26);
+    sumTree.root.left = new TreeNode(10);
+    sumTree.root.right = new TreeNode(3);
+    sumTree.root.left.left = new TreeNode(4);
+    sumTree.root.left.right = new TreeNode(6);
+    sumTree.root.right.right = new TreeNode(3);
 
+    if (tree.isBinaryTreeSumTree(sumTree.root))
+      System.out.println("The given tree is a sum tree");
+    else
+      System.out.println("The given tree is not a sum tree");
+
+    if (tree.isSumTree(sumTree.root))
+      System.out.println("The given tree is a sum tree");
+    else
+      System.out.println("The given tree is not a sum tree");
   }
 }

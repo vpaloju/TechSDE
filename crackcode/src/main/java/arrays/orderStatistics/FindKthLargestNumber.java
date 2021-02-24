@@ -1,6 +1,6 @@
 package arrays.orderStatistics;
 
-import java.util.Arrays;
+import java.util.*;
 
 /**
  * K’th Smallest/Largest Element in Unsorted Array | Set 1
@@ -24,56 +24,39 @@ import java.util.Arrays;
  */
 public class FindKthLargestNumber {
 
-  public static int findKThLargest(int[] a, int k) {
-    if (k < 0 || k > a.length) {
-      return -1;
+  // Function to find the K'th largest element in the array using max-heap
+  public static int findKThLargest(List<Integer> ints, int k) {
+    // create a max-heap using PriorityQueue class from all elements in the list
+    PriorityQueue<Integer> pq = new PriorityQueue<>((a, b) -> b - a);
+    // or pass Comparator.reverseOrder()
+    //PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
+    pq.addAll(ints);
+
+    // pop from max-heap exactly (k-1) times
+    while (--k > 0) {
+      pq.poll();
     }
-    return findKThLargest(a, 0, a.length - 1, k);
+    // return the root of max-heap
+    return pq.peek();
   }
 
-  public static int findKThLargest(int[] a, int start, int end, int k) {
-    int pivot = start;
-    int left = start;
-    int right = end;
-    while (left < right) {
-      while (left <= right && a[left] <= a[pivot])
-        left++;
-      while (left <= right && a[right] >= a[pivot])
-        --right;
-      if (left < right) {
-        swap(a, left, right);
-      }
-    }
-    swap(a, pivot, right);
-    if (k == right + 1) {
-      return a[right];
-    } else if (k > right + 1) {
-      return findKThLargest(a, right + 1, end, k);
-    } else {
-      return findKThLargest(a, start, right - 1, k);
-    }
-  }
 
-  public static void swap(int[] num, int a, int b) {
-    int temp = num[a];
-    num[a] = num[b];
-    num[b] = temp;
-  }
-
-  public static int kthSmallest(int[] a, int k) {
-    Arrays.sort(a);
-    return a[k - 1];
-  }
-
+  /**
+   * Using Arrays.sort() method.
+   *
+   * @param a
+   * @param k
+   * @return
+   */
   public static int kthLargest(int[] a, int k) {
     Arrays.sort(a);
     return a[a.length - k];
   }
 
+
   public static void main(String[] args) {
-    int[] a = {12, 3, 5, 7, 19};
-    /*System.out.println(kthLargest(a, 2));
-    System.out.println(kthSmallest(a, 2));*/
-    System.out.println(findKThLargest(a, 0, a.length - 1, 2));
+    List<Integer> a = Arrays.asList(12, 3, 5, 7, 19);
+    System.out.println(findKThLargest(a, 1));
+    System.out.println(kthLargest(new int[]{12, 3, 5, 7, 19}, 1));
   }
 }

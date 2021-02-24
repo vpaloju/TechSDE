@@ -55,9 +55,11 @@ public class Anagram {
             return false;
         }
         byte[] map = new byte[256];
+        str1 = str1.toLowerCase();
         for (char c : str1.toCharArray()) {
             map[c]++;
         }
+        str2 = str2.toLowerCase();
         for (char c : str2.toCharArray()) {
             map[c]--;
             if (map[c] < 0) {
@@ -70,5 +72,6 @@ public class Anagram {
     public static void main(String[] args) {
         System.out.println(anagram("TRIANGLE", "INTEGRAL"));
         System.out.println(isAnagram("ATRIANGLE", "XINTEGRAL"));
+        System.out.println(isAnagram("Hello", "hello"));
     }
 }

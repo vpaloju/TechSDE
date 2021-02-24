@@ -29,7 +29,7 @@ public class LongestPalindrom {
     }
 
     public static void main(String[] args) {
-        System.out.println(longestPalindrom("forgeeksskeegfor"));
+        System.out.println(longestPalindrom("forgeeksskeegfor"));//geeksskeeg
     }
 
 }

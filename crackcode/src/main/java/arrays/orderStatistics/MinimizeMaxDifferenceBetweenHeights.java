@@ -18,7 +18,7 @@ import java.util.Arrays;
 public class MinimizeMaxDifferenceBetweenHeights {
 
   public static void main(String[] args) {
-    int[] a = new int[]{1, 5, 15, 10};
+    int[] a = new int[]{3, 9, 12, 16, 20};
     System.out.println(minimizeMaxDifferenceBetweenHeights(a, a.length, 3));
   }
 
