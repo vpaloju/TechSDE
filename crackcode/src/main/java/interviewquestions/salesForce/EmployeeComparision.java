@@ -2,6 +2,7 @@ package interviewquestions.salesForce;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Random;
 
 public class EmployeeComparision {
@@ -14,6 +15,9 @@ public class EmployeeComparision {
     //2. Employee ids in reverse order
     Collections.sort(employees, Collections.reverseOrder());
     System.out.println(employees);
+
+    Comparator<Employee> compareById = Comparator.comparing(Employee::getId);
+
   }
 
   //Returns an unordered list of employees
