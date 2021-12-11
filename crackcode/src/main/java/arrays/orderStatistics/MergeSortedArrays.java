@@ -16,13 +16,11 @@ public class MergeSortedArrays {
 
   public static void mergeSordedArrays(int[] a, int[] b, int aLength, int bLength) {
     for (int i = bLength - 1; i >= 0; i--) {
-        /* Find the smallest element greater than ar2[i]. Move all
-           elements one position ahead till the smallest greater
-           element is not found */
+      //Find the smallest element greater than ar2[i]. Move all elements one position ahead till the smallest greater element is not found
       int j, last = a[aLength - 1];
-      for (j = aLength - 2; j >= 0 && a[j] > b[i]; j--)
+      for (j = aLength - 2; j >= 0 && a[j] > b[i]; j--) {
         a[j + 1] = a[j];
-
+      }
       // If there was a greater element
       if (j != aLength - 2 || last > b[i]) {
         a[j + 1] = b[i];

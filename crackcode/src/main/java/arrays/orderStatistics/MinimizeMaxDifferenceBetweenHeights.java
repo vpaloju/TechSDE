@@ -18,18 +18,28 @@ import java.util.Arrays;
 public class MinimizeMaxDifferenceBetweenHeights {
 
   public static void main(String[] args) {
-    int[] a = new int[]{3, 9, 12, 16, 20};
-    System.out.println(minimizeMaxDifferenceBetweenHeights(a, a.length, 3));
+    int[] a = new int[]{3, 7, 8, 10, 14};
+    System.out.println(minimizeMaxDifferenceBetweenHeights(a, a.length, 2));
   }
 
+  /**
+   * Modifies the array by subtracting/adding k to every element such that the difference between maximum and minimum is minimized
+   *
+   * @param a
+   * @param n
+   * @param k
+   * @return
+   */
   public static int minimizeMaxDifferenceBetweenHeights(int[] a, int n, int k) {
     if (n == 0) {
       return 0;
     }
     Arrays.sort(a);
     int result = a[n - 1] - a[0];
+    //Handle corner elements first and last elements
     int small = a[0] + k;
     int big = a[n - 1] - k;
+
     if (small > big) {
       int temp = small;
       small = big;
@@ -38,9 +48,11 @@ public class MinimizeMaxDifferenceBetweenHeights {
     for (int i = 0; i < n; i++) {
       int add = a[i] + k;
       int substract = a[i] - k;
+      // If both subtraction and addition do not change diff
       if (substract >= small || add <= big) {
         continue;
       }
+      // Either subtraction causes a smaller number or addition causes a greater number. Update small or big using greedy approach (If big - subtract causes smaller diff, update smallElse update big)
       if (big - substract <= add - small) {
         small = substract;
       } else {

@@ -28,7 +28,21 @@ public class MinimumJumpsToReachEndOfArray {
     return -1;
   }
 
+  //Greedy approch.
+  public static int minJumpsToReachEnd(int[] a) {
+    int prev = 0, current = 0, jumps = 0;
+    for (int i = 0; i < a.length; i++) {
+      if (i > prev) {
+        jumps = jumps + 1;
+        prev = current;
+      }
+      current = Math.max(current, i + a[i]);
+    }
+    return jumps;
+  }
+
   public static void main(String[] args) {
-    System.out.print(minimumJumpsToReachEndOfArray(new int[]{1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9}));
+    System.out.println(minimumJumpsToReachEndOfArray(new int[]{1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9}));
+    System.out.println(minJumpsToReachEnd(new int[]{1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9}));
   }
 }
