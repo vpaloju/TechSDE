@@ -28,7 +28,7 @@ public class LambdaExpressions {
         // This expression also implements 'FuncInter1' interface
         FuncInter1 multiply = (int x, int y) -> x * y;
 
-        // Creating an object of Test to call operate using
+        // Creating an object of testGroovy.Test to call operate using
         // different implementations using lambda Expressions
         LambdaExpressions tobj = new LambdaExpressions();
 
